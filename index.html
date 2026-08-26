@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" manifest="cache.manifest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>PS Arena - keep your gaming running - 01141133810</title>
+  
+  <link rel="stylesheet" href="includes/style.css">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #060204 !important;
+  background-image: none !important;
+  color: #fff !important;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+
+/* الشريط العلوي */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid #ff1a3c;
+  padding-bottom: 8px;
+}
+.brand-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: #ff1a3c;
+  letter-spacing: 2px;
+}
+#UA {
+  font-size: 15px !important;
+  color: #ff8598 !important;
+  margin: 0 !important;
+}
+
+/* الجزء الأوسط */
+.main-center {
+  text-align: center;
+}
+.main-title {
+  font-size: 64px;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.sub-title {
+  font-size: 16px;
+  letter-spacing: 6px;
+  color: #ff3352;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* أزرار وعناصر التحكم الأصلية */
+.btn-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 12px !important;
+}
+#kernel-options {
+  display: flex !important;
+  gap: 8px !important;
+  background: #150508 !important;
+  padding: 4px !important;
+  border-radius: 8px !important;
+  border: 1px solid #ff1a3c !important;
+}
+#kernel-options input[type="radio"] { display: none !important; }
+#kernel-options label {
+  padding: 6px 14px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: #d1b8bc !important;
+  cursor: pointer !important;
+}
+#kernel-options input[type="radio"]:checked + label {
+  background: #ff1a3c !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+}
+#jeilbrek {
+  background: #ff1a3c !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 8px 28px !important;
+  border-radius: 8px !important;
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  cursor: pointer !important;
+  box-shadow: 0 0 15px rgba(255, 26, 60, 0.6);
+}
+.autoJb {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 14px !important;
+  color: #ff99a8 !important;
+}
+#console {
+  background: #000 !important;
+  border: 1px solid #333 !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+  color: #ffccd3 !important;
+  font-size: 14px !important;
+  max-width: 800px;
+  margin: 0 auto !important;
+  height: 48px !important;
+}
+
+/* إخفاء حاوية الصور تماماً */
+.media-box, img { display: none !important; }
+
+/* كروت الفروع والاتصال السفلية */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+.fast-card {
+  background: #150508;
+  border-left: 3px solid #ff1a3c;
+  padding: 8px 14px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fast-card-text { text-align: right; width: 100%; }
+.fast-label { font-size: 11px; color: #ff8598; font-weight: bold; display: block; }
+.fast-val { font-size: 14px; color: #fff; font-weight: bold; }
+</style>
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="brand-title">PS ARENA</div>
+    <h3 id="UA">Running on:</h3>
+  </div>
+
+  <!-- Exploit Hub -->
+  <div class="main-center">
+    <div class="main-title">PS Arena</div>
+    <div class="sub-title">Keep Your Gaming Running</div>
+
+    <div class="btn-container">
+      <form id="kernel-options">
+        <input type="radio" name="kernel" id="netctrl-exploit" value="netctrl">
+        <label for="netctrl-exploit">NetCtrl</label>
+        <input type="radio" name="kernel" id="lapse-exploit" value="lapse">
+        <label for="lapse-exploit">Lapse</label>
+      </form>
+      <button id="jeilbrek">Jeilbrek</button>
+      <div class="autoJb">
+        <label for="autoJbInput" id="autoJbLabel">Auto Jailbreak</label>
+        <input class="mt-2" id="autoJbInput" type="checkbox">
+      </div>
+    </div>
+
+    <div class="main-layout">
+      <pre id="console">Ready. Awaiting execution...</pre>
+    </div>
+  </div>
+
+  <!-- Contacts & Branches -->
+  <div class="footer-grid">
+    <div class="fast-card">
+      <div class="fast-card-text">
+        <span class="fast-label">فرع بنها</span>
+        <span class="fast-val">شارع 2 بجوار استراحة المحافظ - الفلل</span>
+      </div>
+    </div>
+    <div class="fast-card">
+      <div class="fast-card-text">
+        <span class="fast-label">فرع شبين الكوم</span>
+        <span class="fast-val">شارع رضا شريف من شارع الجلاء</span>
+      </div>
+    </div>
+    <div class="fast-card" style="direction: ltr;">
+      <div>
+        <span class="fast-label">Mobile & WhatsApp</span>
+        <span class="fast-val">01141133810</span>
+      </div>
+      <div>
+        <span class="fast-label">Landline</span>
+        <span class="fast-val">0133232220</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- سكربتات التهكير الأصلية -->
+  <script src="src/main.js"></script>
+  <script src="includes/script.js"></script>
+</body>
+</html>
