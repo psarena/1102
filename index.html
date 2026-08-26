@@ -8,7 +8,11 @@
   <link rel="stylesheet" href="includes/style.css">
 
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   width: 100vw;
@@ -16,12 +20,12 @@ body {
   background-color: #060204 !important;
   background-image: none !important;
   color: #fff !important;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   overflow: hidden !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 20px 32px;
 }
 
 /* الشريط العلوي */
@@ -29,135 +33,193 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1.5px solid #ff1a3c;
-  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(255, 26, 60, 0.4);
+  padding-bottom: 12px;
 }
+
 .brand-title {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 900;
   color: #ff1a3c;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 12px rgba(255, 26, 60, 0.6);
 }
+
 #UA {
   font-size: 15px !important;
   color: #ff8598 !important;
   margin: 0 !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* الجزء الأوسط */
 .main-center {
   text-align: center;
-}
-.main-title {
-  font-size: 64px;
-  font-weight: 900;
-  color: #fff;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.sub-title {
-  font-size: 16px;
-  letter-spacing: 6px;
-  color: #ff3352;
-  text-transform: uppercase;
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
 }
 
-/* أزرار وعناصر التحكم الأصلية */
+.main-title {
+  font-size: 72px;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 1;
+  text-shadow: 0 0 25px rgba(255, 26, 60, 0.5), 0 0 50px rgba(255, 26, 60, 0.2);
+}
+
+.sub-title {
+  font-size: 17px;
+  letter-spacing: 8px;
+  color: #ff2a4b;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 26, 60, 0.4);
+}
+
+/* منطقة الأزرار والخيارات */
 .btn-container {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  gap: 16px !important;
-  margin-bottom: 12px !important;
+  gap: 20px !important;
+  margin-top: 6px;
 }
+
 #kernel-options {
   display: flex !important;
-  gap: 8px !important;
-  background: #150508 !important;
-  padding: 4px !important;
-  border-radius: 8px !important;
-  border: 1px solid #ff1a3c !important;
+  gap: 6px !important;
+  background: #120306 !important;
+  padding: 5px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 26, 60, 0.4) !important;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
 }
+
 #kernel-options input[type="radio"] { display: none !important; }
+
 #kernel-options label {
-  padding: 6px 14px !important;
+  padding: 8px 18px !important;
   font-size: 14px !important;
-  font-weight: bold !important;
-  color: #d1b8bc !important;
+  font-weight: 800 !important;
+  color: #b59fa3 !important;
   cursor: pointer !important;
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
 }
+
 #kernel-options input[type="radio"]:checked + label {
   background: #ff1a3c !important;
   color: #fff !important;
-  border-radius: 6px !important;
+  box-shadow: 0 0 12px rgba(255, 26, 60, 0.7);
 }
+
 #jeilbrek {
-  background: #ff1a3c !important;
+  background: linear-gradient(135deg, #ff1a3c 0%, #b8001f 100%) !important;
   color: #fff !important;
-  border: none !important;
-  padding: 8px 28px !important;
-  border-radius: 8px !important;
-  font-size: 16px !important;
+  border: 1px solid #ff4d6a !important;
+  padding: 10px 36px !important;
+  border-radius: 12px !important;
+  font-size: 17px !important;
   font-weight: 900 !important;
   cursor: pointer !important;
-  box-shadow: 0 0 15px rgba(255, 26, 60, 0.6);
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(255, 26, 60, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
 .autoJb {
   display: flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 8px !important;
   font-size: 14px !important;
+  font-weight: 700 !important;
   color: #ff99a8 !important;
 }
-#console {
-  background: #000 !important;
-  border: 1px solid #333 !important;
-  border-radius: 8px !important;
-  padding: 10px !important;
-  color: #ffccd3 !important;
-  font-size: 14px !important;
-  max-width: 800px;
-  margin: 0 auto !important;
-  height: 48px !important;
+
+.autoJb input[type="checkbox"] {
+  accent-color: #ff1a3c;
+  transform: scale(1.2);
+  cursor: pointer;
 }
 
-/* إخفاء حاوية الصور تماماً */
+/* شاشة السجلات / الكونسول */
+#console {
+  background: #0d0204 !important;
+  border: 1px solid rgba(255, 26, 60, 0.3) !important;
+  border-radius: 10px !important;
+  padding: 12px 20px !important;
+  color: #ffc2cc !important;
+  font-size: 14px !important;
+  font-family: 'Consolas', 'Courier New', monospace !important;
+  width: 720px;
+  max-width: 90vw;
+  height: 46px !important;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .media-box, img { display: none !important; }
 
-/* كروت الفروع والاتصال السفلية */
+/* كروت الفروع والاتصال */
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  max-width: 1200px;
+  gap: 16px;
+  max-width: 1280px;
   margin: 0 auto;
   width: 100%;
 }
+
 .fast-card {
-  background: #150508;
-  border-left: 3px solid #ff1a3c;
-  padding: 8px 14px;
-  border-radius: 6px;
+  background: #110306;
+  border: 1px solid rgba(255, 26, 60, 0.25);
+  border-left: 4px solid #ff1a3c;
+  padding: 10px 18px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
-.fast-card-text { text-align: right; width: 100%; }
-.fast-label { font-size: 11px; color: #ff8598; font-weight: bold; display: block; }
-.fast-val { font-size: 14px; color: #fff; font-weight: bold; }
+
+.fast-card-text {
+  text-align: right;
+  width: 100%;
+}
+
+.fast-label {
+  font-size: 12px;
+  color: #ff6680;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 2px;
+  letter-spacing: 0.5px;
+}
+
+.fast-val {
+  font-size: 14.5px;
+  color: #ffffff;
+  font-weight: 700;
+}
 </style>
 </head>
 
 <body>
 
-  <!-- Top Bar -->
+  <!-- الشريط العلوي -->
   <div class="top-bar">
     <div class="brand-title">PS ARENA</div>
     <h3 id="UA">Running on:</h3>
   </div>
 
-  <!-- Exploit Hub -->
+  <!-- المنتصف والهوست -->
   <div class="main-center">
     <div class="main-title">PS Arena</div>
     <div class="sub-title">Keep Your Gaming Running</div>
@@ -172,7 +234,7 @@ body {
       <button id="jeilbrek">Jeilbrek</button>
       <div class="autoJb">
         <label for="autoJbInput" id="autoJbLabel">Auto Jailbreak</label>
-        <input class="mt-2" id="autoJbInput" type="checkbox">
+        <input id="autoJbInput" type="checkbox">
       </div>
     </div>
 
@@ -181,7 +243,7 @@ body {
     </div>
   </div>
 
-  <!-- Contacts & Branches -->
+  <!-- كروت الفروع ومعلومات التواصل -->
   <div class="footer-grid">
     <div class="fast-card">
       <div class="fast-card-text">
@@ -200,14 +262,14 @@ body {
         <span class="fast-label">Mobile & WhatsApp</span>
         <span class="fast-val">01141133810</span>
       </div>
-      <div>
+      <div style="text-align: right;">
         <span class="fast-label">Landline</span>
         <span class="fast-val">0133232220</span>
       </div>
     </div>
   </div>
 
-  <!-- سكربتات التهكير الأصلية -->
+  <!-- سكربتات التشغيل الأصلية -->
   <script src="src/main.js"></script>
   <script src="includes/script.js"></script>
 </body>
