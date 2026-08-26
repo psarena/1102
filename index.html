@@ -14,18 +14,37 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   width: 100vw;
   height: 100vh;
-  background-color: #060204 !important;
+  background: #050002 !important;
+  background-color: #050002 !important;
   background-image: none !important;
   color: #fff !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
   overflow: hidden !important;
+}
+
+body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px 32px;
+  padding: 24px 36px;
+  position: relative;
+}
+
+/* إطار الصفحة الخارجي */
+body::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1.5px solid rgba(255, 26, 60, 0.3);
+  border-radius: 16px;
+  pointer-events: none;
+  box-shadow: inset 0 0 15px rgba(255, 26, 60, 0.1);
 }
 
 /* الشريط العلوي */
@@ -33,103 +52,115 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid rgba(255, 26, 60, 0.4);
-  padding-bottom: 12px;
+  background: #0f0204;
+  border: 1px solid rgba(255, 26, 60, 0.4);
+  padding: 10px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 26, 60, 0.15);
 }
 
 .brand-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 900;
   color: #ff1a3c;
   letter-spacing: 3px;
-  text-shadow: 0 0 12px rgba(255, 26, 60, 0.6);
+  text-shadow: 0 0 12px rgba(255, 26, 60, 0.7);
 }
 
 #UA {
-  font-size: 15px !important;
-  color: #ff8598 !important;
+  font-size: 14px !important;
+  color: #ff99a8 !important;
   margin: 0 !important;
   font-weight: 600;
   letter-spacing: 0.5px;
+  background: rgba(255, 26, 60, 0.15);
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 26, 60, 0.25);
 }
 
-/* الجزء الأوسط */
+/* الكونتينر الأوسط */
 .main-center {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
+  background: #0c0204;
+  border: 1.5px solid rgba(255, 26, 60, 0.35);
+  padding: 24px 40px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 26, 60, 0.1);
 }
 
 .main-title {
-  font-size: 72px;
+  font-size: 68px;
   font-weight: 900;
   color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   line-height: 1;
-  text-shadow: 0 0 25px rgba(255, 26, 60, 0.5), 0 0 50px rgba(255, 26, 60, 0.2);
+  text-shadow: 0 0 25px rgba(255, 26, 60, 0.6), 0 0 50px rgba(255, 26, 60, 0.25);
 }
 
 .sub-title {
-  font-size: 17px;
-  letter-spacing: 8px;
-  color: #ff2a4b;
+  font-size: 15px;
+  letter-spacing: 7px;
+  color: #ff3352;
   text-transform: uppercase;
   font-weight: 700;
-  text-shadow: 0 0 10px rgba(255, 26, 60, 0.4);
+  text-shadow: 0 0 10px rgba(255, 26, 60, 0.5);
 }
 
-/* منطقة الأزرار والخيارات */
+/* الأزرار والخيارات */
 .btn-container {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   gap: 20px !important;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 #kernel-options {
   display: flex !important;
   gap: 6px !important;
-  background: #120306 !important;
-  padding: 5px !important;
+  background: #000000 !important;
+  padding: 6px !important;
   border-radius: 12px !important;
   border: 1px solid rgba(255, 26, 60, 0.4) !important;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
 #kernel-options input[type="radio"] { display: none !important; }
 
 #kernel-options label {
-  padding: 8px 18px !important;
+  padding: 8px 20px !important;
   font-size: 14px !important;
   font-weight: 800 !important;
   color: #b59fa3 !important;
   cursor: pointer !important;
   border-radius: 8px !important;
-  transition: all 0.2s ease;
 }
 
 #kernel-options input[type="radio"]:checked + label {
   background: #ff1a3c !important;
   color: #fff !important;
-  box-shadow: 0 0 12px rgba(255, 26, 60, 0.7);
+  box-shadow: 0 0 14px rgba(255, 26, 60, 0.8);
 }
 
 #jeilbrek {
   background: linear-gradient(135deg, #ff1a3c 0%, #b8001f 100%) !important;
   color: #fff !important;
   border: 1px solid #ff4d6a !important;
-  padding: 10px 36px !important;
+  padding: 10px 40px !important;
   border-radius: 12px !important;
   font-size: 17px !important;
   font-weight: 900 !important;
   cursor: pointer !important;
-  letter-spacing: 1px;
-  box-shadow: 0 0 20px rgba(255, 26, 60, 0.5);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  letter-spacing: 1.5px;
+  box-shadow: 0 0 25px rgba(255, 26, 60, 0.6);
 }
 
 .autoJb {
@@ -139,6 +170,10 @@ body {
   font-size: 14px !important;
   font-weight: 700 !important;
   color: #ff99a8 !important;
+  background: #000000;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 26, 60, 0.3);
 }
 
 .autoJb input[type="checkbox"] {
@@ -147,19 +182,19 @@ body {
   cursor: pointer;
 }
 
-/* شاشة السجلات / الكونسول */
+/* الكونسول */
 #console {
-  background: #0d0204 !important;
-  border: 1px solid rgba(255, 26, 60, 0.3) !important;
+  background: #000000 !important;
+  border: 1px solid rgba(255, 26, 60, 0.4) !important;
   border-radius: 10px !important;
-  padding: 12px 20px !important;
+  padding: 12px 24px !important;
   color: #ffc2cc !important;
   font-size: 14px !important;
   font-family: 'Consolas', 'Courier New', monospace !important;
-  width: 720px;
-  max-width: 90vw;
-  height: 46px !important;
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.9);
+  width: 100%;
+  max-width: 760px;
+  height: 48px !important;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,26 +202,26 @@ body {
 
 .media-box, img { display: none !important; }
 
-/* كروت الفروع والاتصال */
+/* كروت الفروع السفلية */
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
 
 .fast-card {
-  background: #110306;
-  border: 1px solid rgba(255, 26, 60, 0.25);
-  border-left: 4px solid #ff1a3c;
-  padding: 10px 18px;
-  border-radius: 10px;
+  background: #0f0204;
+  border: 1px solid rgba(255, 26, 60, 0.35);
+  border-top: 2px solid #ff1a3c;
+  padding: 12px 20px;
+  border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 26, 60, 0.1);
 }
 
 .fast-card-text {
@@ -213,13 +248,13 @@ body {
 
 <body>
 
-  <!-- الشريط العلوي -->
+  <!-- Top Bar -->
   <div class="top-bar">
     <div class="brand-title">PS ARENA</div>
     <h3 id="UA">Running on:</h3>
   </div>
 
-  <!-- المنتصف والهوست -->
+  <!-- Main Center Hub -->
   <div class="main-center">
     <div class="main-title">PS Arena</div>
     <div class="sub-title">Keep Your Gaming Running</div>
@@ -238,23 +273,23 @@ body {
       </div>
     </div>
 
-    <div class="main-layout">
+    <div class="main-layout" style="width: 100%; display: flex; justify-content: center;">
       <pre id="console">Ready. Awaiting execution...</pre>
     </div>
   </div>
 
-  <!-- كروت الفروع ومعلومات التواصل -->
+  <!-- Contacts & Branches Cards -->
   <div class="footer-grid">
     <div class="fast-card">
       <div class="fast-card-text">
         <span class="fast-label">فرع بنها</span>
-        <span class="fast-val">شارع 2 بجوار استراحة المحافظ - الفلل</span>
+        <span class="fast-val">شارع 2 بجوار استراحة المحافظ - الفلل - بنها</span>
       </div>
     </div>
     <div class="fast-card">
       <div class="fast-card-text">
         <span class="fast-label">فرع شبين الكوم</span>
-        <span class="fast-val">شارع رضا شريف من شارع الجلاء</span>
+        <span class="fast-val">شارع رضا شريف - شارع الجلاء - شبين الكوم</span>
       </div>
     </div>
     <div class="fast-card" style="direction: ltr;">
@@ -263,13 +298,13 @@ body {
         <span class="fast-val">01141133810</span>
       </div>
       <div style="text-align: right;">
-        <span class="fast-label">Landline</span>
+        <span class="fast-label">PHONE</span>
         <span class="fast-val">0133232220</span>
       </div>
     </div>
   </div>
 
-  <!-- سكربتات التشغيل الأصلية -->
+  <!-- السكربتات الأصلية -->
   <script src="src/main.js"></script>
   <script src="includes/script.js"></script>
 </body>
